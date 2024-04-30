@@ -1,0 +1,13 @@
+.teachers-container {
+    background-color: lightgrey;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.pm-container {
+    background-color: lightgreen;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}

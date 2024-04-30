@@ -83,7 +83,30 @@
     }
     // snack 5
     $paragrafo='Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rem quae cum inventore accusantium temporibus corporis est necessitatibus nemo enim nostrum mollitia nesciunt odio, suscipit libero voluptates eligendi officia error quasi vitae, reprehenderit possimus, consectetur non exercitationem! Nam excepturi laboriosam harum cupiditate dolorem ratione totam commodi quis unde. Hic harum architecto reiciendis accusantium a sit id nobis sapiente tempora aliquid cumque eaque vel mollitia, incidunt voluptates! Odio debitis quae culpa rem obcaecati dolores illo totam beatae unde? Sed soluta consequatur voluptas minus ipsam ex aspernatur quas optio beatae velit quasi dolor pariatur, obcaecati, itaque nisi tempore. Est saepe excepturi fuga.';
-    $newParagrafo = explode("." , $paragrafo)
+    $newParagrafo = explode("." , $paragrafo);
+    // snack 6
+    $db = [
+        'teachers' => [
+            [
+                'name' => 'Michele',
+                'lastname' => 'Papagni'
+            ],
+            [
+                'name' => 'Fabio',
+                'lastname' => 'Forghieri'
+            ]
+        ],
+        'pm' => [
+            [
+                'name' => 'Roberto',
+                'lastname' => 'Marazzini'
+            ],
+            [
+                'name' => 'Federico',
+                'lastname' => 'Pellegrini'
+            ]
+        ]
+    ];
 ?>
 
 <!DOCTYPE html>
@@ -91,6 +114,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>php-snacks-b1</title>
 </head>
 <body>
@@ -132,6 +156,22 @@
         foreach($newParagrafo as $new){
             echo "<p>$new</p>";
         }    
+    ?>
+    <h2>snack 6</h2>
+    <?php 
+        echo '<div class="teachers-container">';
+        echo '<h2>Insegnanti</h2>';
+        foreach ($db['teachers'] as $teacher) {
+            echo '<p>' . $teacher['name'] . ' ' . $teacher['lastname'] . '</p>';
+        }
+        echo '</div>';
+    
+        echo '<div class="pm-container">';
+        echo '<h2>PM</h2>';
+        foreach ($db['pm'] as $pm) {
+            echo '<p>' . $pm['name'] . ' ' . $pm['lastname'] . '</p>';
+        }
+        echo '</div>';
     ?>
   
 </body>
