@@ -82,7 +82,12 @@
         }
     }
     // snack 5
-    $paragrafo='Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rem quae cum inventore accusantium temporibus corporis est necessitatibus nemo enim nostrum mollitia nesciunt odio, suscipit libero voluptates eligendi officia error quasi vitae, reprehenderit possimus, consectetur non exercitationem! Nam excepturi laboriosam harum cupiditate dolorem ratione totam commodi quis unde. Hic harum architecto reiciendis accusantium a sit id nobis sapiente tempora aliquid cumque eaque vel mollitia, incidunt voluptates! Odio debitis quae culpa rem obcaecati dolores illo totam beatae unde? Sed soluta consequatur voluptas minus ipsam ex aspernatur quas optio beatae velit quasi dolor pariatur, obcaecati, itaque nisi tempore. Est saepe excepturi fuga.';
+    $paragrafo='Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora rem quae cum inventore accusantium temporibus corporis est 
+    necessitatibus nemo enim nostrum mollitia nesciunt odio, suscipit libero voluptates eligendi officia error quasi vitae, reprehenderit possimus, 
+    consectetur non exercitationem! Nam excepturi laboriosam harum cupiditate dolorem ratione totam commodi quis unde. Hic harum architecto reiciendis 
+    accusantium a sit id nobis sapiente tempora aliquid cumque eaque vel mollitia, incidunt voluptates! Odio debitis quae culpa rem obcaecati 
+    dolores illo totam beatae unde? Sed soluta consequatur voluptas minus ipsam ex aspernatur quas optio beatae velit quasi dolor pariatur, obcaecati, 
+    itaque nisi tempore. Est saepe excepturi fuga.';
     $newParagrafo = explode("." , $paragrafo);
     // snack 6
     $db = [
@@ -105,6 +110,24 @@
                 'name' => 'Federico',
                 'lastname' => 'Pellegrini'
             ]
+        ]
+    ];
+    // snack 7
+    $classe = [
+        [
+            'nome' => 'Mario',
+            'cognome' => 'Rossi',
+            'voti' => [8, 7, 6, 9, 8]
+        ],
+        [
+            'nome' => 'Anna',
+            'cognome' => 'Verdi',
+            'voti' => [7, 6, 7, 8, 9]
+        ],
+        [
+            'nome' => 'Luca',
+            'cognome' => 'Bianchi',
+            'voti' => [9, 8, 9, 7, 8]
         ]
     ];
 ?>
@@ -173,6 +196,17 @@
         }
         echo '</div>';
     ?>
-  
+    <h2>snack 7</h2>
+    <?php 
+   
+        foreach($classe as $class){
+            echo '<div class="pm-container">';
+            echo  $class['nome']. ' ' .$class['cognome']. "<br>";
+            $voti= $class['voti'];
+            $media= array_sum($voti) / count($voti);
+            echo "Media voti: " . $media;
+            echo '</div>';
+        }
+    ?>
 </body>
 </html>
