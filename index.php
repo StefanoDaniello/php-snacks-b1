@@ -26,7 +26,7 @@
         $nome = $_GET['nome'];
         $email = $_GET['email'];
         $age = $_GET['age'];
-        if(strlen($nome) > 3  && strpos($email ,'@') !== false && strpos($email, '.') !== false && is_numeric($age)){
+        if(strlen($nome) > 3  && !is_numeric($nome) && strpos($email ,'@') !== false && strpos($email, '.') !== false && is_numeric($age)){
             $acesso="Accesso riuscito";
         }else{
             $acesso= "Accesso negato";
@@ -149,8 +149,11 @@
     ?>
     <h2>snack 2</h2>
     <form action="index.php" method="GET">
+        <label for="nome">Nome</label>
         <input type="text" name="nome">
+        <label for="email">Email</label>
         <input type="email" name="email">
+        <label for="age">Eta'</label>
         <input type="text" name="age">
         <button type="submit">Invia</button>
         <?php echo $acesso; ?>
