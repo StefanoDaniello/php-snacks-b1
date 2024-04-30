@@ -73,6 +73,15 @@
         ],
     ];
 
+    // snack 4
+    $numeri_casuali=[];
+    while(count($numeri_casuali) < 15){
+        $controllo_numeri = rand(1, 100);
+        if(!in_array($controllo_numeri , $numeri_casuali)){
+            $numeri_casuali[] = $controllo_numeri;
+        }
+    }
+   
 ?>
 
 <!DOCTYPE html>
@@ -110,6 +119,13 @@
             }
         }
     ?>
-
+    <h2>snack 4</h2>
+    <?php 
+     foreach($numeri_casuali as $numero){
+        echo $numero . "<br>";
+     }
+       
+    ?>
+  
 </body>
 </html>
