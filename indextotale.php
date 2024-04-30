@@ -153,7 +153,7 @@
         <input type="text" name="nome">
         <label for="email">Email</label>
         <input type="email" name="email">
-        <label for="age">Eta'</label>
+        
         <input type="text" name="age">
         <button type="submit">Invia</button>
         <?php echo $acesso; ?>
