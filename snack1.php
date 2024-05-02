@@ -1,26 +1,15 @@
 <?php
   // snack1
-  $partite = [
-    [
-        'squadra_casa' => 'Olimpia Milano',
-        'squadra_ospite' => 'Cantù',
-        'punti_casa' => 55,
-        'punti_ospite' => 60
-    ],
-    [
-        'squadra_casa' => 'Virtus Bologna',
-        'squadra_ospite' => 'Varese',
-        'punti_casa' => 72,
-        'punti_ospite' => 68
-    ],
-    [
-        'squadra_casa' => 'Fortitudo Bologna',
-        'squadra_ospite' => 'Reggiana',
-        'punti_casa' => 80,
-        'punti_ospite' => 75
-    ],
-];
-
+  include __DIR__ . '/Models/model.php';
+ function getMatch($partite){
+    // importante e passare l'array di partite per poterlo usare nella funzione
+    $match =""; 
+    foreach($partite as $partita){
+        $match .= $partita['squadra_casa']. ' - ' .$partita['squadra_ospite'] . ' | ' . $partita['punti_casa'] . '-' . $partita['punti_ospite'] . '<br>';
+    }
+    return $match;
+    // importante l' uso del return altrimenti la funzione non ci ritornera nulla
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,9 +21,7 @@
 <body>
 <h2> snack 1</h2>
     <?php
-        foreach($partite as $partita){
-           echo $partita['squadra_casa']. '-' .$partita['squadra_ospite'] . ' | ' . $partita['punti_casa'] . '-' . $partita['punti_ospite'] . '<br>';
-        }
+        echo getMatch($partite);
     ?>
 </body>
 </html>

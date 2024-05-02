@@ -1,4 +1,5 @@
-<?php
+<?php 
+    
     // snack1
     $partite = [
         [
@@ -130,6 +131,10 @@
             'voti' => [9, 8, 9, 7, 8]
         ]
     ];
+    include __DIR__ . '/Views/header.php';
+    // header('Location: ./snack1.php');
+    // serve per direzionare l'utente in un'altra pagina che vogliamo
+
 ?>
 
 <!DOCTYPE html>
@@ -137,7 +142,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <?php  include __DIR__ . '/Views/link.php'; ?>
     <title>php-snacks-b1</title>
 </head>
 <body>
@@ -148,7 +153,7 @@
         }
     ?>
     <h2>snack 2</h2>
-    <form action="index.php" method="GET">
+    <form action="indextotale.php" method="GET">
         <label for="nome">Nome</label>
         <input type="text" name="nome">
         <label for="email">Email</label>
@@ -211,5 +216,6 @@
             echo '</div>';
         }
     ?>
+    <?php include __DIR__ . '/Views/footer.php'; ?>
 </body>
 </html>
